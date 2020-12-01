@@ -3,6 +3,9 @@
 # Move to the root directory of your Unity3D project
 # Then run it with sudo perms
 
+# Gets Repo Name Input
+read -p "Repo Name: " reponame
+
 # Copies the gitignore file into the root directory
 cp ./harmony-assets/Unity.gitignore ./.gitignore
 
@@ -13,13 +16,14 @@ cp ./harmony-assets/Unity.gitattributes ./.gitattributes
 sudo apt install git-lfs
 
 # Git setup
-git init -b main
+echo "# $reponame" >> README.md
+git init
 git add *
 git commit -m "Initial commit"
-read -p "Repo Name: " reponame
+git branch -M main
 git remote add origin https://github.com/skyclo/$reponame
 git remote -v
-git push remote origin
+git push -u origin main
 
 # Done!
 echo
