@@ -18,7 +18,7 @@ sudo apt install git-lfs
 # Git setup
 echo "# $reponame" >> README.md
 git init
-git add *
+git add .
 git commit -m "Initial commit"
 git branch -M main
 git remote add origin https://github.com/skyclo/$reponame
@@ -26,5 +26,6 @@ git remote -v
 git push -u origin main
 
 # Done!
+rm -r ./harmony-assets/
 echo
 echo Done!
